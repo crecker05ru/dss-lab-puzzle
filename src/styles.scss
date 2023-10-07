@@ -1,0 +1,75 @@
+.dialog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #777;
+}
+
+.dialog {
+  background-color: #fff;
+  max-height: 500px;
+  max-width: 350px;
+
+  &__header {
+      display: flex;
+      background-color: #ddd;
+  }
+
+  &__header-title-container {
+    // flex: 1 1 auto;
+  }
+
+  &__header-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+
+    @supports (-webkit-line-clamp: 1) {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  &__header-button {
+    display: block;
+    width: 200px;
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__content-block {
+      &_left {
+          width: 30%;
+          border-right: 1px solid #ccc;
+      }
+
+      &_right {
+          width: 70%;
+          height: 400px;
+          overflow: auto;
+
+      }
+  }
+
+  &__footer {
+      background-color: #ddd;
+      word-break: break-all;
+      text-align: center;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 500px;
+  width: 100%;
+}
